@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string.h>
+using namespace std;
+int main()
+{
+	char A[20]="We are Indian";
+	char B[20]="We are Human";
+	char D[20];
+	cout << "Length of A: " << strlen(A) << endl;
+	cout << "Length of B: " << strlen(B) << endl;
+	char C[20];
+	cin.get(C,20);
+	cout << "Length of C :" << strlen(C) << endl;
+	cout << strncat(A,B,6) <<endl;
+	strcpy(D,B);
+	cout<<D<<endl;
+	
+
+	return 0;
+}
