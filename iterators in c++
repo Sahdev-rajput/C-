@@ -1,0 +1,13 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+    string str="SAHDEV";
+    string::reverse_iterator sahdev;
+    for(sahdev=str.rbegin();sahdev!=str.rend();sahdev++)
+    {
+        *sahdev=*sahdev+32;
+        cout<<*sahdev;
+    }
+}
