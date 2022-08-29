@@ -1,0 +1,21 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main()
+{
+    string str="sahdev";
+    cout<<str.at(4);
+    str[4]='A';
+    cout<<endl<<str.at(4);
+    cout<<endl;
+    cout<<str.front()<<endl;
+    cout<<str.back()<<endl;
+    string str2=" Rajput";
+    str=str+str2;
+    cout<<str<<endl;
+    string s3;
+    s3=str;
+    cout<<s3<<endl;
+    return 0;
+    
+}
