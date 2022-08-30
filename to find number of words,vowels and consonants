@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	string str;
+	getline(cin, str);
+	int vowel = 0,count=0,consonant=0;
+	for (int i = 0; i < str.length(); i++)
+	{
+		if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u' || str[i] == 'A' || str[i] == 'E'
+			|| str[i] == 'I' || str[i] == 'O' || str[i] == 'U')
+		{
+			vowel++;
+		}
+		else
+		{
+			if (str[i] != ' ' && str[i] >= 65)
+			{
+				consonant++;
+			}
+		}
+	}
+	for (int k = 0; k < str.length(); k++)
+	{
+		if (str[k] == ' ')
+		{
+			k++;
+		}
+	}
+	cout << "Number of vowels are: " << vowel << endl;
+	cout << "Number of words are: " << count+1<< endl;
+	cout << "Number of consonants are: " << consonant << endl;
+	return;
+}
