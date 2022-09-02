@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+using namespace std;
+template <class T>
+T maximum(T x, T y)
+{
+	if (x > y)
+	{
+		return x;
+	}
+	else
+	{
+		return y;
+	}
+}
+int main()
+{
+	int c = maximum(4, 5);
+	float d = maximum(3.4f, 4.5f);
+	cout << c << endl << d << endl;
+	return 0;
+}
