@@ -1,0 +1,20 @@
+//predict the output of the following quesion
+#include <iostream>
+using namespace std;
+int g = 5;
+void fun()
+{
+	int g = 10;
+	{
+		int g = 0;
+		g++;
+		cout << g << endl;//c++ follow block level scoping output is 1
+	}
+	cout << g << endl;//output is 10
+}
+int main()
+{
+	cout << g << endl;//program starts from main functio so first of all 5 will be printed
+	fun();//then the function is called
+	cout << g << endl;//output is 5
+}
