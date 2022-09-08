@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int g = 0;//this is a global varisable
+void fun()
+{
+	int a = 5;//this is a local variable
+	g = g + a;
+	cout << g;//output 20
+}
+void main()
+{
+	int x = 10;//this is also a local variable
+	g = 15;
+	fun();
+	cout << endl;
+	g++;
+	cout << g << endl;//outpiut 21
+}
