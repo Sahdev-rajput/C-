@@ -1,1 +1,32 @@
-
+#include<iostream>
+using namespace std;
+class rectangle
+{
+public:
+	int length;
+	int breadth;
+	int area()
+	{
+		return length * breadth;
+	}
+	int perimeter()
+	{
+		return 2 * (length + breadth);
+	}
+};
+int main()
+{
+	//allocating a memory space in heap
+	rectangle* p = new rectangle();
+	p->length = 10;
+	p->breadth = 5;
+	cout << p->area() << endl;
+	//declaring a pointer to a object of a class 
+	//memory allocation is in stack
+	rectangle r;
+	rectangle* q = &r;
+	q->length = 11;
+	q->breadth = 5;
+	cout << q->perimeter() << endl;
+	return 0;
+}
