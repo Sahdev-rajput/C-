@@ -1,0 +1,82 @@
+#include <iostream>
+#include <string>
+using namespace std;
+class student
+{
+private:
+	int roll;
+	string name;
+	int physics;
+	int maths;
+	int chemistry;
+public:
+	student(int r, string str, int p, int m, int c)
+	{
+		roll = r;
+		name = str;
+		physics = p;
+		maths = m;
+		chemistry = c;
+	}
+
+	int add();
+	string grade();
+};
+int main()
+{
+	int r;
+	string str;
+	int p;
+	int m;
+	int c;
+	cout << "Enter your Roll no : " << endl;
+	cin >> r;
+	cout << "Enter your name: " << endl;
+	cin >> str;
+	getline(cin, str);
+	cout << "Enter marks in physics : " << endl;
+	cin >> p;
+	cout << "Enter marks in mathematics: " << endl;
+	cin >> m;
+	cout << "Enter marks in chemistry: " << endl;
+	cin >> c;
+	student s(r, str, p, m, c);
+	cout << "Total marks are: " << s.add() << endl;
+	cout << "Grade is : " << s.grade() << endl;
+}
+int student::add()
+{
+	return physics + chemistry + maths;
+}
+string student::grade()
+{
+	int percent = add() / 3;
+	if (percent >= 90)
+	{
+		return "A+";
+	}
+	else if (percent < 90 && percent >= 80)
+	{
+		return "A";
+	}
+	else if (percent < 80 && percent >= 70)
+	{
+		return "B+";
+	}
+	else if (percent < 70 && percent >= 60)
+	{
+		return "B";
+	}
+	else if (percent < 60 && percent >= 50)
+	{
+		return "C+";
+	}
+	else if (percent < 50 && percent >= 40)
+	{
+		return "C";
+	}
+	else
+	{
+		return "F";
+	}
+}
