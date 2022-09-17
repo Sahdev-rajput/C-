@@ -1,0 +1,74 @@
+#include <iostream>
+using namespace std;
+class rectangle {
+private:
+	int length;
+	int breadth;
+public:
+	//we have declared the functions in a single line but have not defined it
+	//we will define them using scope resolution operator
+	rectangle();//It is a constructor . Constructor doesnot have datatypes
+	rectangle(int a, int b);//it is a parametrised contructor
+	rectangle(rectangle& r);//it is a copy constructor
+	void setlength(int a);//it is a mutator
+	void setbreadth(int b);//it is also a mutator
+	int getlength() { return length; };//inline function and accessor
+	int getbreadth() { return breadth; };//inline functions and accessor
+	int area();//it is a facilitator
+	int perimeter();//it is also a facilitator
+	bool issquare();//it is a inspector or a enquiry
+	~rectangle();//it is a destructor used to delete the class
+};
+int main()
+{
+	rectangle r(10,10);
+	cout << r.area() << endl;
+	if (r.issquare())
+	{
+		cout << "Yes it is a square"<<endl;
+	}
+	else
+	{
+		cout << "It is not a square "<<endl;
+	}
+		cout << r.perimeter() << endl;
+}
+rectangle::rectangle()
+{
+	length = 1;
+	breadth = 1;
+}
+rectangle::rectangle(int a=1, int b=1)
+{
+	length = a;
+	breadth = b;
+}
+rectangle::rectangle(rectangle& r)
+{
+	length = r.length;
+	breadth = r.breadth;
+}
+void rectangle::setlength(int a)
+{
+    length=a;
+}
+void rectangle::setbreadth(int b)
+{
+	breadth=b;
+}
+int rectangle::area()
+{
+	return length * breadth;
+}
+int rectangle::perimeter()
+{
+	return 2 * (length + breadth);
+}
+bool rectangle::issquare()
+{
+	return length == breadth;
+}
+rectangle::~rectangle()
+{
+	cout << "Rectangle got deleted";
+}
