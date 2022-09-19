@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+class rational
+{
+private:
+	int p;
+	int q;
+public:
+	rational(int p = 0, int q = 0)
+	{
+		this->p = p;
+		this->q = q;
+	}
+	void display()
+	{
+		cout << p << "/" << q << endl;
+	}
+	friend rational operator+(rational r1, rational r2);
+	friend ostream& operator<<(ostream&, rational& r);
+};
+rational operator+(rational r1, rational r2)
+{
+	rational temp;
+	int t = r1.q * r2.q;
+	temp.p = r1.p*(t/r1.q) + r2.p*(t/r2.q);
+	temp.q =t;
+	return temp;
+}
+ostream& operator<<(ostream& c, rational& r)
+{
+	c << r.p << "/" << r.q;
+	return c;
+}
+int main()
+{
+	rational r1(1,3);
+	rational r2(2,5);
+	rational r3;
+	r3 = r1+r2;
+	cout << "Sum of rational number " << r1 << " and " << r2 << " is " << r3;
+}
