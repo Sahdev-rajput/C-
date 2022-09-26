@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+class base
+{
+public:
+	//to achieve polymorphism we make virtual classes
+	virtual  void fun() = 0;//pure virtual classes
+};
+class derived :public base
+{
+public:
+	void fun()
+	{
+		cout << "This is a function of derived" << endl;
+	}
+};
+int main()
+{
+	base* p = new derived();
+	p->fun();
+}
