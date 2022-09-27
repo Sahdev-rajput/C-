@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+class student
+{
+private:
+	int roll_no;
+	static int admin;
+public:
+	student()
+	{
+		admin++;
+		roll_no = admin;
+	}
+	int display()
+	{
+		return roll_no;
+	}
+};
+int student::admin = 0;
+int main()
+{
+	student ramesh;
+	student sahdev;
+	student akash;
+	student sunny;
+	student virendra;
+	student abhinav;
+	cout<<"The roll number of akash is: "<<akash.display()<<endl;
+	cout << "The roll number of abhinav is: " << abhinav.display()<<endl;
+	cout << "The roll number of sahdev is :" << sahdev.display()<<endl;
+}
