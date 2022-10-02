@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+class myexception:public exception//it is optional to inherit from exception
+{
+};
+class myexception2 :public myexception
+{
+};
+int main()
+{
+	int a = 10, b = 0, c;
+	try {
+		if (b == 0)
+			throw(myexception2());
+		else
+			c = a / b;
+		cout << c;
+	}
+	catch (myexception2)//child class must be declared before parent class
+	{
+		cout << "Wrong input" << endl;
+	}
+	catch (myexception)
+	{
+		cout << "Divison by zero" << endl;
+	}
+}
