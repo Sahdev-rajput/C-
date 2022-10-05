@@ -1,0 +1,20 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+	cout << hex << 163 << endl;
+	cout << dec << 78 << endl;
+	cout << fixed << 12.6789 << endl;
+	cout << scientific << 156.890 << endl;
+	cout << "sahdev";
+	cin >> ws;
+	cout << "rajput" << endl;
+	cout << setbase(10) << 87 << endl;
+	cout << setbase(6) << 163 << endl;
+	cout <<fixed<< setprecision(3) << 12.6789<<endl;
+	int a = 15;  int b = 20;
+	cout << setw(10) << a << setw(10) << b << endl;
+	cout << left << "Sahdev" << endl;
+	cout << right << "Rajput" << endl;
+}
