@@ -1,0 +1,59 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+class item
+{
+public:
+	string name;
+	int prize=0;
+	int amount=0;
+	friend ofstream& operator<<(ofstream& ofs, item& s);
+	friend ifstream& operator>>(ifstream& ifs, item& s);
+};
+ofstream& operator<<(ofstream& ofs, item& s)
+{
+	ofs << s.name << endl;
+	ofs << s.prize << endl;
+	ofs << s.amount << endl;
+	return ofs;
+}
+ifstream& operator>>(ifstream& ifs, item& s)
+{
+	ifs >> s.name >> s.prize >> s.amount;
+	return ifs;
+}
+int main()
+{
+	int n;
+	cout << "Enter the number of items: " << endl;
+	cin >> n;
+	item s;
+	ofstream ofs("item.txt",ios::trunc);
+	for (int i = 0; i < n; i++)
+	{
+		cout << endl << endl;
+		cout << "enter the details of item no. " << i+1 << endl;
+		cout << "Name: ";
+		cin >> s.name;
+		ofs << s.name << endl;
+		cout << "Prize: ";
+		cin >> s.prize;
+		ofs << s.prize<<endl;
+		cout << "Quantity: ";
+		cin >> s.amount;
+		ofs << s.amount<<endl;
+	}
+	ofs.close();
+	cout << endl << endl << endl << endl << endl;
+	ifstream ifs("item.txt");
+	cout << "The details of item are as follows:" << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << endl;
+		cout << "Details of item no. " << i + 1 << "as follows: " << endl;
+		ifs >> s.name >> s.prize >> s.amount;
+		cout << "Item Name : " << s.name << endl;
+		cout << "Item Prize : " << s.amount << endl;
+	}
+	ifs.close();
+}
